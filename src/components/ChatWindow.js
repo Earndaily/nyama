@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Send, X, User } from "lucide-react";
-import { sendMessage, listenToMessages } from "../utils/firestoreService";
+import { sendMessage, listenToMessages } from "../utils/firestoreService.js"; // Added .js
 
 /**
  * A simple chat window for customers to message a restaurant.

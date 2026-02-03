@@ -12,8 +12,8 @@
 
 import { useState } from "react";
 import { Check } from "lucide-react";
-import { useAuth } from "../context/AuthContext";
-import { createBooking } from "../utils/firestoreService";
+import { useAuth } from "../context/AuthContext.js"; // Added .js
+import { createBooking } from "../utils/firestoreService.js"; // Added .js
 
 export default function BookingModal({ restaurant, cart, onClose }) {
   const { user } = useAuth();
