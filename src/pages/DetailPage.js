@@ -12,8 +12,8 @@
 
 import { useState } from "react";
 import { ArrowLeft, Phone, MapPin, Star, Plus, Copy, Check, ChevronDown, ChevronUp, MessageCircle } from "lucide-react";
-import { ReadOnlyMap } from "../components/MapComponents";
-import ChatWindow from "../components/ChatWindow";
+import { ReadOnlyMap } from "../components/MapComponents.js"; // Added .js
+import ChatWindow from "../components/ChatWindow.js"; // Added .js
 
 export default function DetailPage({ restaurant: r, onBack, cart, onAddToCart, onOpenBooking, currentUser }) {
   const [revealed, setRevealed] = useState(false);

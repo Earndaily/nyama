@@ -22,7 +22,7 @@ import {
   updateProfile
 } from "firebase/auth";
 import { doc, setDoc, getDoc } from "firebase/firestore";
-import { auth, db } from "../firebase.config";
+import { auth, db } from "../firebase.config.js";
 
 const AuthContext = createContext(null);
 const googleProvider = new GoogleAuthProvider();

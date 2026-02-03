@@ -12,10 +12,10 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { Search, MapPin, Star, Crown, ChevronRight } from "lucide-react";
-import { useGeolocation } from "../hooks/useGeolocation";
-import { getAllRestaurants } from "../utils/firestoreService";
-import { DinerMap } from "../components/MapComponents";
-import { UGANDAN_DISTRICTS } from "../constants/uganda";
+import { useGeolocation } from "../hooks/useGeolocation.js"; // Added .js
+import { getAllRestaurants } from "../utils/firestoreService.js"; // Added .js
+import { DinerMap } from "../components/MapComponents.js"; // Added .js
+import { UGANDAN_DISTRICTS } from "../constants/uganda.js"; // Added .js
 
 const DISTRICTS = ["All Districts", ...UGANDAN_DISTRICTS];
 const CATEGORIES  = [

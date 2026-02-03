@@ -13,16 +13,16 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { ArrowLeft, Check, Plus, Minus, LogOut, Camera, Upload, Zap } from "lucide-react";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../context/AuthContext.js"; // Added .js
 import { 
   getOwnerRestaurants, 
   createRestaurant, 
   updateRestaurant, 
   getRestaurantBookings,
   uploadImage 
-} from "../utils/firestoreService";
-import { OwnerMap } from "../components/MapComponents";
-import { UGANDAN_DISTRICTS } from "../constants/uganda";
+} from "../utils/firestoreService.js"; // Added .js
+import { OwnerMap } from "../components/MapComponents.js"; // Added .js
+import { UGANDAN_DISTRICTS } from "../constants/uganda.js"; // Added .js
 
 const DISTRICTS = UGANDAN_DISTRICTS;
 

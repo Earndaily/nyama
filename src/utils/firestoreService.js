@@ -47,7 +47,7 @@ import {
   serverTimestamp,
   onSnapshot
 } from "firebase/firestore";
-import { db } from "../firebase.config";
+import { db } from "../firebase.config.js";
 
 // ─── FILE UPLOADS (Cloudinary) ─────────────────────────────
 
