@@ -41,7 +41,7 @@
 
 import {
   collection, doc,
-  addDoc, setDoc, updateDoc,
+  addDoc, updateDoc,
   getDoc, getDocs,
   query, where, orderBy, limit,
   serverTimestamp,
