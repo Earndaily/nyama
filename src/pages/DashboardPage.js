@@ -11,8 +11,8 @@
 //        • Save buttons that call updateRestaurant() or createRestaurant()
 // =============================================================
 
-import { useState, useEffect, useCallback } from "react";
-import { ArrowLeft, Check, Plus, Minus, LogOut, Camera, Upload, Zap } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Minus, Camera, Upload, Zap } from "lucide-react";
 import { useAuth } from "../context/AuthContext.js"; // Added .js
 import { 
   getOwnerRestaurants, 
@@ -27,7 +27,7 @@ import { UGANDAN_DISTRICTS } from "../constants/uganda.js"; // Added .js
 const DISTRICTS = UGANDAN_DISTRICTS;
 
 export default function DashboardPage({ onBack, showToast }) {
-  const { user, userProfile, loading: authLoading, signUp, loginEmail, loginGoogle, logout } = useAuth();
+  const { user, loading: authLoading, signUp, loginEmail, loginGoogle, logout } = useAuth();
 
   // ── states ────────────────────────────────────────
   const [loginTab,     setLoginTab]     = useState("login");
@@ -37,10 +37,10 @@ export default function DashboardPage({ onBack, showToast }) {
   const [authErr,      setAuthErr]      = useState(null);
   const [authBusy,     setAuthBusy]     = useState(false);
 
-  const [restaurants,  setRestaurants]  = useState([]);
-  const [activeRes,    setActiveRes]    = useState(null);
-  const [bookingCount, setBookingCount] = useState(0);
-  const [dashLoading,  setDashLoading]  = useState(false);
+  const [, setRestaurants]  = useState([]);
+  const [activeRes, setActiveRes]    = useState(null);
+  const [, setBookingCount] = useState(0);
+  const [, setDashLoading]  = useState(false);
   const [saveBusy,     setSaveBusy]     = useState(false);
 
   const [form, setForm] = useState({
@@ -134,7 +134,7 @@ export default function DashboardPage({ onBack, showToast }) {
     }
     load();
     return () => { cancelled = true; };
-  }, [user]);
+  }, [user, showToast]);
 
   function populateForm(doc) {
     // Migration: if menu is old format [{name, price}], wrap it in a category
@@ -210,7 +210,7 @@ export default function DashboardPage({ onBack, showToast }) {
         await updateRestaurant(activeRes.id, payload);
         showToast("✅ Saved!");
       } else {
-        const id = await createRestaurant(payload, user.uid);
+        await createRestaurant(payload, user.uid);
         showToast("✅ Registered!");
         const docs = await getOwnerRestaurants(user.uid);
         setRestaurants(docs);

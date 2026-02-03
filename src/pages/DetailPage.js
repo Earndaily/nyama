@@ -11,7 +11,7 @@
 // =============================================================
 
 import { useState } from "react";
-import { ArrowLeft, Phone, MapPin, Star, Plus, Copy, Check, ChevronDown, ChevronUp, MessageCircle } from "lucide-react";
+import { ArrowLeft, Phone, MapPin, Plus, Copy, Check, ChevronDown, ChevronUp, MessageCircle } from "lucide-react";
 import { ReadOnlyMap } from "../components/MapComponents.js"; // Added .js
 import ChatWindow from "../components/ChatWindow.js"; // Added .js
 
