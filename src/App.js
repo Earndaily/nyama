@@ -1,32 +1,22 @@
 // =============================================================
 // FILE: src/App.js
 // =============================================================
-// Top-level router (simple state machine — no react-router
-// dependency needed for this mobile SPA).
-//
-// Pages:   home | detail | dashboard
-// Shared:  cart state, toast, bottom nav
-// =============================================================
-
 import { useState, useCallback } from "react";
-import { AuthProvider, useAuth } from "./context/AuthContext";
-import HomePage      from "./pages/HomePage";
-import DetailPage    from "./pages/DetailPage";
-import DashboardPage from "./pages/DashboardPage";
-import BookingModal  from "./components/BookingModal";
+import { AuthProvider, useAuth } from "./context/AuthContext.js";
+import HomePage      from "./pages/HomePage.js";
+import DetailPage    from "./pages/DetailPage.js";
+import DashboardPage from "./pages/DashboardPage.js";
+import BookingModal  from "./components/BookingModal.js";
 import { Search, User } from "lucide-react";
-
-// ... (existing Font/Leaflet injection) ...
 
 function AppContent() {
   const { user } = useAuth();
   // ── routing ─────────────────────────────────────
-  const [page,               setPage]               = useState("home");
+  const [page,               setPage]                = useState("home");
   const [selectedRestaurant, setSelectedRestaurant] = useState(null);
 
-  // ... (existing state) ...
-  const [cart,              setCart]              = useState({});
-  const [cartRestaurantId,  setCartRestaurantId]  = useState(null);
+  const [cart,               setCart]               = useState({});
+  const [cartRestaurantId,   setCartRestaurantId]   = useState(null);
   const [bookingOpen,          setBookingOpen]          = useState(false);
   const [bookingRestaurant,    setBookingRestaurant]    = useState(null);
   const [toast, setToast] = useState(null);
