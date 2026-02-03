@@ -53,12 +53,12 @@ import { db } from "../firebase.config.js";
 
 /**
  * Uploads a file to Cloudinary and returns the public URL.
- * Requires VITE_CLOUDINARY_CLOUD_NAME and VITE_CLOUDINARY_UPLOAD_PRESET 
+ * Requires REACT_APP_CLOUDINARY_CLOUD_NAME and REACT_APP_CLOUDINARY_UPLOAD_PRESET
  * in your .env file.
  */
 export async function uploadImage(file) {
-  const cloudName = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME || "your_cloud_name";
-  const uploadPreset = import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET || "your_unsigned_preset";
+  const cloudName = process.env.REACT_APP_CLOUDINARY_CLOUD_NAME || "your_cloud_name";
+  const uploadPreset = process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET || "your_unsigned_preset";
 
   const formData = new FormData();
   formData.append("file", file);
